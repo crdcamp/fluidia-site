@@ -12,13 +12,13 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-gray-900/80"></div>
+        <div className="absolute inset-0 bg-gray-900/70"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-6 text-white">
             Opus Dynamics
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
-            Transforming businesses through innovative digital solutions
+          We offer simple, quick, and streamlined web-based solutions to any and all
           </p>
           <div className="flex justify-center gap-6">
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
@@ -65,7 +65,7 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-gray-900/90"></div>
+        <div className="absolute inset-0 bg-gray-900/70"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -119,7 +119,7 @@ function App() {
       <footer className="bg-gray-800 py-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Opus Dynamics</h2>
-          <p className="text-gray-400 mb-6">Transforming businesses through technology</p>
+          <p className="text-gray-400 mb-6">We offer simple, quick, and streamlined web-based solutions to any and all</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">Services</a>
