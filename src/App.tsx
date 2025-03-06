@@ -35,7 +35,7 @@ function App() {
           </p>
           <div className="flex justify-center gap-6">
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
-              Get Started
+              Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
               About Us
@@ -101,7 +101,7 @@ function App() {
                 />
               </div>
             </div>
-            <div className="p-8 rounded-xl" style={{ backgroundColor: 'hsla(0,0%,18%,0.95)' }}>
+            <div className="p-8 rounded-xl" style={{ backgroundColor: 'hsla(0,0%,18%,1)' }}>
               <h3 className="text-2xl font-bold mb-6">Ready to Transform Your Business?</h3>
               <form className="space-y-4">
                 <input
@@ -146,7 +146,7 @@ function App() {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'hsla(0,0%,18%,0.95)' }}>
+    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'hsla(0,0%,18%,1)' }}>
       <div className="mb-6">{icon}</div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400">{description}</p>
