@@ -14,7 +14,7 @@ function App() {
         }}>
         <div className="absolute inset-0 bg-gray-900/80"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-olive-400 to-gray-200">
+          <h1 className="text-6xl font-bold mb-6 text-white">
             Opus Dynamics
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
@@ -34,7 +34,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gray-800">
+      <section className="py-24" style={{ backgroundColor: 'hsla(0,0%,9%,0.95)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">What Opus Offers</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -88,7 +88,7 @@ function App() {
                 />
               </div>
             </div>
-            <div className="bg-gray-800 p-8 rounded-xl">
+            <div className="p-8 rounded-xl" style={{ backgroundColor: 'hsla(0,0%,18%,0.95)' }}>
               <h3 className="text-2xl font-bold mb-6">Ready to Transform Your Business?</h3>
               <form className="space-y-4">
                 <input
@@ -133,7 +133,7 @@ function App() {
 
 function ServiceCard({ icon, title, description }) {
   return (
-    <div className="bg-gray-900 p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300">
+    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'hsla(0,0%,18%,0.95)' }}>
       <div className="mb-6">{icon}</div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400">{description}</p>
