@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-    /* Global color variables not referenced yet*/
     --dark-bg-color: hsla(0,0%,8%,0.95);
-    --dark-card-bg: hsla(0,0%,18%,0.95);
+    --dark-card-bg: hsla(0,0%,18%,1);
   }

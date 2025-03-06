@@ -47,24 +47,24 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24" style={{ backgroundColor: 'hsla(0,0%,8%,0.95)' }}>
+      <section className="py-24" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">What Opus Offers</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Globe2 className="w-12 h-12 text-olive-500" />}
               title="Web Development"
-              description="Fully custom websites and web applications with fast turn around times. We'll adjust things however you see fit."
+              description="Fully custom websites and web applications with fast turn around times. We adjust things however you see fit."
+            />
+            <ServiceCard
+              icon={<Code2 className="w-12 h-12 text-olive-500" />}
+              title="Fully Integrated Solutions"
+              description='Our motto is "Unity". Everything we do for our customers ensures a cohesive, fully implemented approach.'
             />
             <ServiceCard
               icon={<LineChart className="w-12 h-12 text-olive-500" />}
               title="Business Analysis"
               description="Data-driven insights to optimize your operations and growth."
-            />
-            <ServiceCard
-              icon={<Code2 className="w-12 h-12 text-olive-500" />}
-              title="Fully Integrated Solutions"
-              description='Our motto is "Unity": Everything we do for our customers ensures a cohesive, top-down approach.'
             />
           </div>
         </div>
@@ -101,7 +101,7 @@ function App() {
                 />
               </div>
             </div>
-            <div className="p-8 rounded-xl" style={{ backgroundColor: 'hsla(0,0%,18%,1)' }}>
+            <div className="p-8 rounded-xl" style={{ backgroundColor: 'var(--dark-card-bg)' }}>
               <h3 className="text-2xl font-bold mb-6">Ready to Transform Your Business?</h3>
               <form className="space-y-4">
                 <input
@@ -129,7 +129,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12" style={{ backgroundColor: 'hsla(0,0%,8%,0.95)' }}>
+      <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Opus Dynamics</h2>
           <p className="text-gray-400 mb-6">We offer simple, quick, and streamlined web-based solutions to any and all</p>
@@ -146,7 +146,7 @@ function App() {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'hsla(0,0%,18%,1)' }}>
+    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'var(--dark-card-bg)' }}>
       <div className="mb-6">{icon}</div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400">{description}</p>
