@@ -16,7 +16,7 @@ interface FeatureProps {
 
 function App() {
   return (
-    <div className="bg-gray-900 text-gray-100">
+    <div className="bg-black text-gray-100">
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
