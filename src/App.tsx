@@ -36,7 +36,7 @@ function App() {
       {/* Services Section */}
       <section className="py-24 bg-gray-800">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Our Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">What Opus Offers</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Globe2 className="w-12 h-12 text-olive-500" />}
