@@ -11,7 +11,7 @@ interface ServiceCardProps {
 interface FeatureProps {
   icon: React.ReactNode;
   title: string;
-  description: string;b
+  description: string;
 }
 
 function App() {
