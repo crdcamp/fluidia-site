@@ -54,17 +54,17 @@ function App() {
             <ServiceCard
               icon={<Globe2 className="w-12 h-12 text-olive-500" />}
               title="Web Development"
-              description="Custom websites and web applications tailored to your business needs"
+              description="Fully custom websites and web applications with fast turn around times. We'll adjust things however you see fit."
             />
             <ServiceCard
               icon={<LineChart className="w-12 h-12 text-olive-500" />}
               title="Business Analysis"
-              description="Data-driven insights to optimize your operations and growth"
+              description="Data-driven insights to optimize your operations and growth."
             />
             <ServiceCard
               icon={<Code2 className="w-12 h-12 text-olive-500" />}
-              title="Digital Solutions"
-              description="Streamlined processes and automated workflows for efficiency"
+              title="Fully Integrated Solutions"
+              description='Our motto is "Unity": Everything we do for our customers ensures a cohesive, top-down approach.'
             />
           </div>
         </div>
