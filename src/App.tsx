@@ -1,5 +1,18 @@
 import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
+import heroBackgroundImage from './assets/green_galaxy_image.webp'; // Your image path here
+
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface FeatureProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;b
+}
 
 function App() {
   return (
@@ -7,7 +20,7 @@ function App() {
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072")',
+          backgroundImage: `url(${heroBackgroundImage})`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -24,8 +37,8 @@ function App() {
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
               Get Started
             </button>
-            <button className="border border-olive-700 hover:border-olive-600 px-8 py-3 rounded-lg transition">
-              Learn More
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
+              About Us
             </button>
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -34,7 +47,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24" style={{ backgroundColor: 'hsla(0,0%,9%,0.95)' }}>
+      <section className="py-24" style={{ backgroundColor: 'hsla(0,0%,8%,0.95)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">What Opus Offers</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -116,7 +129,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12" style={{ backgroundColor: 'hsla(0,0%,9%,0.95)' }}>
+      <footer className="py-12" style={{ backgroundColor: 'hsla(0,0%,8%,0.95)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Opus Dynamics</h2>
           <p className="text-gray-400 mb-6">We offer simple, quick, and streamlined web-based solutions to any and all</p>
@@ -131,7 +144,7 @@ function App() {
   );
 }
 
-function ServiceCard({ icon, title, description }) {
+function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
     <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'hsla(0,0%,18%,0.95)' }}>
       <div className="mb-6">{icon}</div>
@@ -141,7 +154,7 @@ function ServiceCard({ icon, title, description }) {
   );
 }
 
-function Feature({ icon, title, description }) {
+function Feature({ icon, title, description }: FeatureProps) {
   return (
     <div className="flex gap-4">
       <div className="flex-shrink-0">{icon}</div>
