@@ -116,7 +116,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 py-12">
+      <footer className="py-12" style={{ backgroundColor: 'hsla(0,0%,9%,0.95)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Opus Dynamics</h2>
           <p className="text-gray-400 mb-6">We offer simple, quick, and streamlined web-based solutions to any and all</p>
