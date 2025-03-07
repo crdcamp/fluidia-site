@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
-import heroBackgroundImage from './assets/green_galaxy_image.webp'; // Your image path here
+import heroBackgroundImage from './assets/green_galaxy_image.webp';
+import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -57,7 +58,7 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Us Section */}
       <section className="py-24" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
@@ -65,7 +66,7 @@ function App() {
             <ServiceCard
               icon={<Globe2 className="w-12 h-12 text-olive-500" />}
               title="Web Development"
-              description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them fast."
+              description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them quickly."
             />
             <ServiceCard
               icon={<Code2 className="w-12 h-12 text-olive-500" />}
@@ -81,10 +82,10 @@ function App() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Contact Us Section */}
       <section className="py-24 relative overflow-hidden"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070")',
+          backgroundImage: `url(${aboutUsBackgroundImage})`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -117,7 +118,7 @@ function App() {
                 className="p-8 rounded-xl" 
                 style={{ backgroundColor: 'var(--dark-card-bg)' }}
               >
-              {/* Add your contact form content here */}
+              {/* Contact Us Box */}
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <form className="space-y-4">
                 <div>
