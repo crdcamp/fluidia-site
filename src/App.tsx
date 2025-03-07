@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
-/*import emampleTemplatesBackgroundImage from './assets/dark_green_ocean.jpg''*/
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -46,15 +45,12 @@ function App() {
           Unified, intuitive, and fast web-based services
           </p>
           <div className="flex justify-center gap-6">
-          <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
-              About Us
-            </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
               onClick={scrollToContact}>
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
-              Examples
+              About Us
             </button>
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -94,7 +90,7 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-gray-900/30"></div>
+        <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -121,7 +117,6 @@ function App() {
                 ref={contactFormRef} 
                 className="p-8 rounded-xl" 
                 style={{ backgroundColor: 'var(--dark-card-bg)' }}
-                
               >
               {/* Contact Us Box */}
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
