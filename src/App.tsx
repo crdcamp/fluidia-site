@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import heroBackgroundImage from './assets/green_galaxy_image.webp'; // Your image path here
 
@@ -15,6 +15,16 @@ interface FeatureProps {
 }
 
 function App() {
+  // Create the ref
+  const contactFormRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    contactFormRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <div className="bg-black text-gray-100">
       {/* Hero Section */}
@@ -34,7 +44,8 @@ function App() {
           We develop intuitive, quick, and streamlined web-based solutions to any and all
           </p>
           <div className="flex justify-center gap-6">
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+              onClick={scrollToContact}>
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
@@ -101,25 +112,39 @@ function App() {
                 />
               </div>
             </div>
-            <div className="p-8 rounded-xl" style={{ backgroundColor: 'var(--dark-card-bg)' }}>
-              <h3 className="text-2xl font-bold mb-6">Allow us to assist you in streamlining your business</h3>
+            <div 
+                ref={contactFormRef} 
+                className="p-8 rounded-xl" 
+                style={{ backgroundColor: 'var(--dark-card-bg)' }}
+              >
+              {/* Add your contact form content here */}
+              <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-500"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-500"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  rows={4}
-                  className="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-olive-500"
-                ></textarea>
-                <button className="w-full bg-olive-700 hover:bg-olive-600 text-white py-3 rounded-lg transition">
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Your Name" 
+                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Your Email" 
+                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                  />
+                </div>
+                <div>
+                  <textarea 
+                    placeholder="Your Message" 
+                    rows={4}
+                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit" 
+                  className="w-full bg-olive-700 hover:bg-olive-600 text-white p-3 rounded transition"
+                >
                   Send Message
                 </button>
               </form>
