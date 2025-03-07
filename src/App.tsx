@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
+import examplesBackgroundImage from './assets/dark_green_ocean.jpg'
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -157,23 +158,25 @@ function App() {
       </section>
 
       {/* Examples Section */}
-      <div className='bg-black py-9'>
+      <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-10'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">Some Examples for You</h2>
+          <h2 className="text-4xl font-bold text-center m-0">A Taste of Fluidia</h2>
+          <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
+            Explore some of our templates to see how beautiful your site could be
+          </p>
         </div>
       </div>
 
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundImage: `url(${examplesBackgroundImage})`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-gray-900/70"></div>
+        <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Examples</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Example items will go here */}
             <div className="p-8 rounded-xl bg-gray-800/80 text-center">
               <h3 className="text-xl font-bold mb-4">Example Project 1</h3>
@@ -182,6 +185,10 @@ function App() {
             <div className="p-8 rounded-xl bg-gray-800/80 text-center">
               <h3 className="text-xl font-bold mb-4">Example Project 2</h3>
               <p className="text-gray-300">Description of the second example project.</p>
+            </div>
+            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+              <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
+              <p className="text-gray-300">Description of the third example project.</p>
             </div>
             <div className="p-8 rounded-xl bg-gray-800/80 text-center">
               <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
