@@ -156,6 +156,41 @@ function App() {
         </div>
       </section>
 
+      {/* Examples Section */}
+      <div className='bg-black py-9'>
+        <div className='max-w-6x1 mx-auto px-4'>
+          <h2 className="text-4xl font-bold text-center m-0">Some Examples for You</h2>
+        </div>
+      </div>
+
+      <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}>
+        <div className="absolute inset-0 bg-gray-900/70"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-white">Our Examples</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Example items will go here */}
+            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+              <h3 className="text-xl font-bold mb-4">Example Project 1</h3>
+              <p className="text-gray-300">Description of the first example project.</p>
+            </div>
+            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+              <h3 className="text-xl font-bold mb-4">Example Project 2</h3>
+              <p className="text-gray-300">Description of the second example project.</p>
+            </div>
+            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+              <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
+              <p className="text-gray-300">Description of the third example project.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
