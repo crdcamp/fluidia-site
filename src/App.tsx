@@ -38,10 +38,10 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/70"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-6 text-white">
-            Opus Dynamics
+            Welcome to Fluidia
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
-          We develop intuitive, quick, and streamlined web-based solutions to any and all
+          Unified, intuitive, and fast web-based services
           </p>
           <div className="flex justify-center gap-6">
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
@@ -60,7 +60,7 @@ function App() {
       {/* Services Section */}
       <section className="py-24" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">What Opus Offers</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Globe2 className="w-12 h-12 text-olive-500" />}
@@ -124,7 +124,7 @@ function App() {
                   <input 
                     type="text" 
                     placeholder="Your Name" 
-                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                    className="w-full p-3 rounded bg-gray-700 border border-gray-700 text-white"
                   />
                 </div>
                 <div>
@@ -156,7 +156,7 @@ function App() {
       {/* Footer */}
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-4">Opus Dynamics</h2>
+          <h2 className="text-2xl font-bold mb-4">Fluidia</h2>
           <p className="text-gray-400 mb-6">We develop intuitive, quick, and streamlined web-based solutions to any and all</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
