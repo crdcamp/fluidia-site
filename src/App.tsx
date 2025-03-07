@@ -46,12 +46,15 @@ function App() {
           Unified, intuitive, and fast web-based services
           </p>
           <div className="flex justify-center gap-6">
+          <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
+              About Us
+            </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
               onClick={scrollToContact}>
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
-              About Us
+              Examples
             </button>
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
