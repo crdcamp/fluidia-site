@@ -42,7 +42,7 @@ function App() {
             Welcome to Fluidia
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
-          Unified, intuitive, and fast web-based services
+          Unified, intuitive, and fast web-based services.
           </p>
           <div className="flex justify-center gap-6">
           <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
@@ -162,7 +162,7 @@ function App() {
         <div className='max-w-6x1 mx-auto px-4'>
           <h2 className="text-4xl font-bold text-center m-0">A Taste of Fluidia</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
-            Explore some of our templates to see how beautiful your site could be
+            Beauty in design is our signature. Take a look.
           </p>
         </div>
       </div>
@@ -202,7 +202,7 @@ function App() {
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Fluidia</h2>
-          <p className="text-gray-400 mb-6">We develop intuitive, quick, and streamlined web-based solutions to any and all</p>
+          <p className="text-gray-400 mb-6">Unified, intuitive, and fast web-based services.</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">Services</a>
