@@ -90,7 +90,7 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-gray-900/70"></div>
+        <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
