@@ -3,6 +3,7 @@ import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react
 import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
 import examplesBackgroundImage from './assets/dark_green_ocean.jpg'
+import { APP } from './constants.tsx';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -39,10 +40,10 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/70"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-6 text-white">
-            Welcome to Fluidia
+            Welcome to {APP.NAME}
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
-          Unified, intuitive, and fast web-based services.
+          {APP.TAGLINE}
           </p>
           <div className="flex justify-center gap-6">
           <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
@@ -160,7 +161,7 @@ function App() {
       {/* Examples Section */}
       <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-10'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">A Taste of Fluidia</h2>
+          <h2 className="text-4xl font-bold text-center m-0">A Taste of {APP.NAME}</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
             Beauty in design is our signature. Take a look.
           </p>
@@ -201,8 +202,8 @@ function App() {
       {/* Footer */}
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-4">Fluidia</h2>
-          <p className="text-gray-400 mb-6">Unified, intuitive, and fast web-based services.</p>
+          <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
+          <p className="text-gray-400 mb-6">{APP.TAGLINE}.</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">Services</a>
