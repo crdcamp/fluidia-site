@@ -98,22 +98,22 @@ function App() {
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8">Why Choose Us?</h2>
+              <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s' Focus</h2>
               <div className="space-y-6">
                 <Feature
                   icon={<Rocket className="w-6 h-6 text-olive-500" />}
-                  title="Innovation First"
-                  description="Cutting-edge solutions using the latest technologies"
+                  title="Work Smarter"
+                  description="We use the latest technologies to speed things up, making an experience mutually beneficial to both developers and customers."
                 />
                 <Feature
                   icon={<Database className="w-6 h-6 text-olive-500" />}
-                  title="Data-Driven"
-                  description="Make informed decisions based on robust analytics"
+                  title="Integrate"
+                  description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to maintain."
                 />
                 <Feature
                   icon={<Laptop className="w-6 h-6 text-olive-500" />}
-                  title="Custom Solutions"
-                  description="Tailored approaches for your unique challenges"
+                  title="Solve"
+                  description="We want to work directly with you in order to develop the perfect solution."
                 />
               </div>
             </div>
@@ -203,7 +203,7 @@ function App() {
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
-          <p className="text-gray-400 mb-6">{APP.TAGLINE}.</p>
+          <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
             <a href="#" className="text-gray-400 hover:text-olive-500 transition">Services</a>
