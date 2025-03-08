@@ -221,7 +221,7 @@ function App() {
 
 function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div className="p-8 rounded-xl hover:transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'var(--dark-card-bg)' }}>
+    <div className="p-8 rounded-xl transform hover:-translate-y-2 transition duration-300" style={{ backgroundColor: 'var(--dark-card-bg)' }}>
       <div className="mb-6">{icon}</div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400">{description}</p>
