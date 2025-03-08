@@ -78,7 +78,7 @@ function App() {
             <ServiceCard
               icon={<Code2 className="w-12 h-12 text-olive-500" />}
               title="Fully Integrated Solutions"
-              description='Our motto is "Unity". Everything we do for our customers ensures a cohesive and fully implemented approach.'
+              description='Our motto is Integration. Everything we do for our customers ensures a cohesive and fully implemented approach.'
             />
             <ServiceCard
               icon={<LineChart className="w-12 h-12 text-olive-500" />}
@@ -212,9 +212,6 @@ function App() {
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToAbout(); }}>About</a>
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToContact(); }}>Contact</a>
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToExamples(); }}>Examples</a>
           </div>
         </div>
       </footer>
