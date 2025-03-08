@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
 import examplesBackgroundImage from './assets/dark_green_ocean.jpg'
 import { APP } from './constants.tsx';
+import { useScrollToElement } from './hooks/useScrollToElement';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -18,14 +19,10 @@ interface FeatureProps {
 }
 
 function App() {
-  const contactFormRef = useRef<HTMLDivElement>(null);
-
-  const scrollToContact = () => {
-    contactFormRef.current?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
-  };
+  // Create separate refs for different sections
+  const { elementRef: contactFormRef, scrollToElement: scrollToContact } = useScrollToElement();
+  const { elementRef: aboutUsRef, scrollToElement: scrollToAbout } = useScrollToElement();
+  const { elementRef: examplesRef, scrollToElement: scrollToExamples } = useScrollToElement();
 
   return (
     <div className="bg-black text-gray-100">
@@ -46,14 +43,16 @@ function App() {
           {APP.TAGLINE}
           </p>
           <div className="flex justify-center gap-6">
-          <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+              onClick={scrollToAbout}>
               About Us
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
               onClick={scrollToContact}>
               Contact
             </button>
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition">
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+              onClick={scrollToExamples}>
               Examples
             </button>
           </div>
@@ -63,7 +62,11 @@ function App() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <section 
+        ref={aboutUsRef}
+        className="py-24" 
+        style={{ backgroundColor: 'var(--dark-bg-color)' }}
+      >
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -168,7 +171,9 @@ function App() {
         </div>
       </div>
 
-      <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
+      <section 
+        ref={examplesRef}
+        className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `url(${examplesBackgroundImage})`,
           backgroundAttachment: 'fixed',
@@ -192,8 +197,8 @@ function App() {
               <p className="text-gray-300">Description of the third example project.</p>
             </div>
             <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-              <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
-              <p className="text-gray-300">Description of the third example project.</p>
+              <h3 className="text-xl font-bold mb-4">Example Project 4</h3>
+              <p className="text-gray-300">Description of the fourth example project.</p>
             </div>
           </div>
         </div>
@@ -205,9 +210,9 @@ function App() {
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition">About</a>
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition">Services</a>
-            <a href="#" className="text-gray-400 hover:text-olive-500 transition">Contact</a>
+            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToAbout(); }}>About</a>
+            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToContact(); }}>Contact</a>
+            <a href="#" className="text-gray-400 hover:text-olive-500 transition" onClick={(e) => { e.preventDefault(); scrollToExamples(); }}>Examples</a>
           </div>
         </div>
       </footer>
