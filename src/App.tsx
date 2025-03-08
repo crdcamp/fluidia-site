@@ -131,7 +131,7 @@ function App() {
                 <div>
                   <input 
                     type="text" 
-                    placeholder="Your Name" 
+                    placeholder="Your Full Name" 
                     className="w-full p-3 rounded border border-gray-700 text-white"
                     style={{ backgroundColor: 'var(--light-grey-box)' }}
                   />
@@ -139,6 +139,7 @@ function App() {
                 <div>
                   <input 
                     type="email" 
+                    placeholder='Your Email'
                     className="w-full p-3 rounded border border-gray-700 text-white"
                     style={{ backgroundColor: 'var(--light-grey-box)' }}
                   />
