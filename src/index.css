@@ -5,4 +5,5 @@
 :root {
     --dark-bg-color: hsla(0,0%,8%,0.95);
     --dark-card-bg: hsla(0,0%,18%,1);
-  }
+    --light-grey-box: hsla(125,0%,70%,1);
+  };

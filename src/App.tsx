@@ -132,21 +132,22 @@ function App() {
                   <input 
                     type="text" 
                     placeholder="Your Name" 
-                    className="w-full p-3 rounded bg-gray-700 border border-gray-700 text-white"
+                    className="w-full p-3 rounded border border-gray-700 text-white"
+                    style={{ backgroundColor: 'var(--light-grey-box)' }}
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
-                    placeholder="Your Email" 
-                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                    className="w-full p-3 rounded border border-gray-700 text-white"
+                    style={{ backgroundColor: 'var(--light-grey-box)' }}
                   />
                 </div>
                 <div>
                   <textarea 
                     placeholder="Your Message" 
-                    rows={4}
-                    className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
+                    className="w-full p-3 rounded border border-gray-700 text-white"
+                    style={{ backgroundColor: 'var(--light-grey-box)' }}
                   ></textarea>
                 </div>
                 <button 
