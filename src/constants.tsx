@@ -1,4 +1,4 @@
 export const APP = {
-    NAME: "Testing Testing... 123",
+    NAME: "Fluidia",
     TAGLINE: "Web Design and Integration",
 };
