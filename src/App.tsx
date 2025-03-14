@@ -19,7 +19,6 @@ interface FeatureProps {
 }
 
 function App() {
-  // Create separate refs for different sections
   const { elementRef: contactFormRef, scrollToElement: scrollToContact } = useScrollToElement();
   const { elementRef: aboutUsRef, scrollToElement: scrollToAbout } = useScrollToElement();
   const { elementRef: examplesRef, scrollToElement: scrollToExamples } = useScrollToElement();
@@ -37,7 +36,7 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/70"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-6xl font-bold mb-6 text-white">
-            Welcome to {APP.NAME}
+            {APP.NAME}
           </h1>
           <p className="text-2xl mb-8 text-gray-300">
           {APP.TAGLINE}

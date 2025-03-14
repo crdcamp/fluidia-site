@@ -1,4 +1,4 @@
 export const APP = {
-    NAME: "Fluidia",
-    TAGLINE: "Web Design and Integration",
+    NAME: "Fluidia.dev",
+    TAGLINE: "Website and Database Integration",
 };
