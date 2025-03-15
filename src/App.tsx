@@ -2,7 +2,8 @@ import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
-import examplesBackgroundImage from './assets/dark_green_ocean.jpg'
+import examplesBackgroundImage from './assets/dark_green_ocean.jpg';
+import restaurantExample from './assets/restaurant_example_image.jpg';
 import { APP } from './constants.tsx';
 import { useScrollToElement } from './hooks/useScrollToElement';
 
