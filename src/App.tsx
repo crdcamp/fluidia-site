@@ -174,37 +174,43 @@ function App() {
       </div>
 
       <section 
-        ref={examplesRef}
-        className="min-h-screen relative flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${examplesBackgroundImage})`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-        <div className="absolute inset-0 bg-gray-900/40"></div>
-        <div className="relative z-10 max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Example items will go here */}
-            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-              <h3 className="text-xl font-bold mb-4">Example Project 1</h3>
-              <p className="text-gray-300">Description of the first example project.</p>
-            </div>
-            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-              <h3 className="text-xl font-bold mb-4">Example Project 2</h3>
-              <p className="text-gray-300">Description of the second example project.</p>
-            </div>
-            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-              <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
-              <p className="text-gray-300">Description of the third example project.</p>
-            </div>
-            <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-              <h3 className="text-xl font-bold mb-4">Example Project 4</h3>
-              <p className="text-gray-300">Description of the fourth example project.</p>
-            </div>
-          </div>
+  ref={examplesRef}
+  className="min-h-screen relative flex items-center justify-center overflow-hidden"
+  style={{
+    backgroundImage: `url(${examplesBackgroundImage})`,
+    backgroundAttachment: 'fixed',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}>
+  <div className="absolute inset-0 bg-gray-900/40"></div>
+  <div className="relative z-10 max-w-6xl mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* Example 1 with image */}
+      <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+        <img 
+          src={restaurantExample}
+          className="w-full h-64 object-cover"
+        />
+        <div className="p-4 bg-gray-800/90">
+          <h3 className="text-xl font-bold">Inventory Management</h3>
+        
         </div>
-      </section>
+      </div>
+      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+        <h3 className="text-xl font-bold mb-4">Example Project 2</h3>
+        <p className="text-gray-300">Description of the second example project.</p>
+      </div>
+      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+        <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
+        <p className="text-gray-300">Description of the third example project.</p>
+      </div>
+      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
+        <h3 className="text-xl font-bold mb-4">Example Project 4</h3>
+        <p className="text-gray-300">Description of the fourth example project.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
