@@ -166,7 +166,7 @@ function App() {
       {/* Examples Section */}
       <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-10'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">A Taste of {APP.NAME}</h2>
+          <h2 className="text-4xl font-bold text-center m-0">Here's Some Examples</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
             Beauty in design is our signature. Take a look.
           </p>
@@ -189,9 +189,9 @@ function App() {
       <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
         <img 
           src={restaurantExample}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-contain"
         />
-        <div className="p-4 bg-gray-800/90">
+        <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
           <h3 className="text-xl font-bold">Inventory Management</h3>
         
         </div>
