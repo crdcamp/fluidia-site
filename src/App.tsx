@@ -172,8 +172,7 @@ function App() {
           </p>
         </div>
       </div>
-
-      <section 
+    <section 
   ref={examplesRef}
   className="min-h-screen pb-20 relative flex items-center justify-center overflow-hidden"
   style={{
@@ -191,7 +190,7 @@ function App() {
         src={restaurantExample}
         className="w-full h-64 object-contain"
       />
-      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
     </div>
@@ -202,7 +201,7 @@ function App() {
         src={restaurantExample}
         className="w-full h-64 object-contain"
       />
-      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
     </div>
@@ -213,7 +212,7 @@ function App() {
         src={restaurantExample}
         className="w-full h-64 object-contain"
       />
-      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
     </div>
@@ -224,7 +223,7 @@ function App() {
         src={restaurantExample}
         className="w-full h-64 object-contain"
       />
-      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <h3 className="text-xl font-bold">Inventory Management</h3>    
       </div>
     </div>
