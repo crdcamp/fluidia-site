@@ -164,7 +164,7 @@ function App() {
       </section>
 
       {/* Examples Section */}
-      <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-10'>
+      <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-5'>
         <div className='max-w-6x1 mx-auto px-4'>
           <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
@@ -174,7 +174,7 @@ function App() {
       </div>
     <section 
   ref={examplesRef}
-  className="min-h-screen pb-20 relative flex items-center justify-center overflow-hidden"
+  className="min-h-screen pb-20 pt-14 relative flex items-center justify-center overflow-hidden"
   style={{
     backgroundImage: `url(${examplesBackgroundImage})`,
     backgroundAttachment: 'fixed',
@@ -232,7 +232,7 @@ function App() {
 </section>
 
       {/* Footer */}
-      <footer className="py-7" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <footer className="py-8" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
