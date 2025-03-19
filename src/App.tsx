@@ -101,7 +101,7 @@ function App() {
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s' Focus</h2>
+              <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s Focus</h2>
               <div className="space-y-6">
                 <Feature
                   icon={<Rocket className="w-6 h-6 text-olive-500" />}
@@ -174,7 +174,7 @@ function App() {
       </div>
     <section 
   ref={examplesRef}
-  className="min-h-screen pb-20 pt-14 relative flex items-center justify-center overflow-hidden"
+  className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
   style={{
     backgroundImage: `url(${examplesBackgroundImage})`,
     backgroundAttachment: 'fixed',
@@ -182,7 +182,7 @@ function App() {
     backgroundPosition: 'center',
   }}>
 <div className="absolute inset-0 bg-gray-900/40"></div>
-<div className="relative z-10 max-w-6xl mx-auto px-4">
+<div className="relative z-10 max-w-7xl mx-auto px-4">
   <div className="grid md:grid-cols-2 gap-8">
     {/* Example 1 with image */}
     <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
@@ -232,7 +232,7 @@ function App() {
 </section>
 
       {/* Footer */}
-      <footer className="py-8" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <footer className="py-9" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
