@@ -166,7 +166,7 @@ function App() {
       {/* Examples Section */}
       <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-10'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">Here's Some Examples</h2>
+          <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
             Beauty in design is our signature. Take a look.
           </p>
@@ -175,45 +175,65 @@ function App() {
 
       <section 
   ref={examplesRef}
-  className="min-h-screen relative flex items-center justify-center overflow-hidden"
+  className="min-h-screen pb-20 relative flex items-center justify-center overflow-hidden"
   style={{
     backgroundImage: `url(${examplesBackgroundImage})`,
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}>
-  <div className="absolute inset-0 bg-gray-900/40"></div>
-  <div className="relative z-10 max-w-6xl mx-auto px-4">
-    <div className="grid md:grid-cols-2 gap-8">
-      {/* Example 1 with image */}
-      <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-        <img 
-          src={restaurantExample}
-          className="w-full h-64 object-contain"
-        />
-        <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-          <h3 className="text-xl font-bold">Inventory Management</h3>
-        
-        </div>
+<div className="absolute inset-0 bg-gray-900/40"></div>
+<div className="relative z-10 max-w-6xl mx-auto px-4">
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Example 1 with image */}
+    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+      <img 
+        src={restaurantExample}
+        className="w-full h-64 object-contain"
+      />
+      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+        <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
-      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-        <h3 className="text-xl font-bold mb-4">Example Project 2</h3>
-        <p className="text-gray-300">Description of the second example project.</p>
+    </div>
+    
+    {/* Example 2 with image */}
+    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+      <img 
+        src={restaurantExample}
+        className="w-full h-64 object-contain"
+      />
+      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+        <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
-      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-        <h3 className="text-xl font-bold mb-4">Example Project 3</h3>
-        <p className="text-gray-300">Description of the third example project.</p>
+    </div>
+    
+    {/* Example 3 with image */}
+    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+      <img 
+        src={restaurantExample}
+        className="w-full h-64 object-contain"
+      />
+      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+        <h3 className="text-xl font-bold">Inventory Management</h3>
       </div>
-      <div className="p-8 rounded-xl bg-gray-800/80 text-center">
-        <h3 className="text-xl font-bold mb-4">Example Project 4</h3>
-        <p className="text-gray-300">Description of the fourth example project.</p>
+    </div>
+    
+    {/* Example 4 with image */}
+    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+      <img 
+        src={restaurantExample}
+        className="w-full h-64 object-contain"
+      />
+      <div className="p-4" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+        <h3 className="text-xl font-bold">Inventory Management</h3>    
       </div>
     </div>
   </div>
+</div>
 </section>
 
       {/* Footer */}
-      <footer className="py-12" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+      <footer className="py-7" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
