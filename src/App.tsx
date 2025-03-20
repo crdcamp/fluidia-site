@@ -166,16 +166,16 @@ function App() {
         </div>
       </section>
 
-      {/* Examples Section */}
-      <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-5'>
-        <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
-          <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
-            Beauty in design is our signature. Take a look.
-          </p>
-        </div>
-      </div>
-    <section 
+{/* Examples Section */}
+<div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-5'>
+  <div className='max-w-6x1 mx-auto px-4'>
+    <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
+    <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
+      Beauty in design is our signature. Take a look.
+    </p>
+  </div>
+</div>
+<section 
   ref={examplesRef}
   className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
   style={{
@@ -184,54 +184,86 @@ function App() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}>
-<div className="absolute inset-0 bg-gray-900/40"></div>
-<div className="relative z-10 max-w-7xl mx-auto px-4">
-  <div className="grid md:grid-cols-2 gap-8">
-    {/* Example 1 with image */}
-    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-      <img 
-        src={restaurantExample}
-        className="w-full h-64 object-contain"
-      />
-      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Inventory Management</h3>
-      </div>
-    </div>
-    
-    {/* Example 2 with image */}
-    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-      <img 
-        src={carExampleImage}
-        className="w-full h-64 object-contain"
-      />
-      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Exotic Car Rental</h3>
-      </div>
-    </div>
-    
-    {/* Example 3 with image */}
-    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-      <img 
-        src={financeExampleImage}
-        className="w-full h-64 object-contain"
-      />
-      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Financial Services</h3>
-      </div>
-    </div>
-    
-    {/* Example 4 with image */}
-    <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-      <img 
-        src={inventoryExampleImage}
-        className="w-full h-64 object-contain"
-      />
-      <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Inventory Management</h3>    
-      </div>
+  <div className="absolute inset-0 bg-gray-900/40"></div>
+  <div className="relative z-10 max-w-7xl mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-8">
+      {/* Example 1 with image */}
+      <a 
+        href="https://exampleinventorysite.netlify.app/"
+        target="_blank"  
+        rel="noopener noreferrer"  
+        className="block"
+      >
+        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+          <img 
+            src={restaurantExample}
+            className="w-full h-64 object-contain"
+            alt="Restaurant Example"
+          />
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+            <h3 className="text-xl font-bold">Inventory Management</h3>
+          </div>
+        </div>
+      </a>
+
+      {/* Example 2 with image */}
+      <a 
+        href="https://exampleinventorysite.netlify.app/"
+        target="_blank"  
+        rel="noopener noreferrer"  
+        className="block"
+      >
+        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+          <img 
+            src={restaurantExample}
+            className="w-full h-64 object-contain"
+            alt="Restaurant Example"
+          />
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+            <h3 className="text-xl font-bold">Inventory Management</h3>
+          </div>
+        </div>
+      </a>
+
+      {/* Example 3 with image */}
+      <a 
+        href="https://exampleinventorysite.netlify.app/"
+        target="_blank"  
+        rel="noopener noreferrer"  
+        className="block"
+      >
+        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+          <img 
+            src={restaurantExample}
+            className="w-full h-64 object-contain"
+            alt="Restaurant Example"
+          />
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+            <h3 className="text-xl font-bold">Inventory Management</h3>
+          </div>
+        </div>
+      </a>
+
+      {/* Example 4 with image */}
+      <a 
+        href="https://exampleinventorysite.netlify.app/"
+        target="_blank"  
+        rel="noopener noreferrer"  
+        className="block"
+      >
+        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+          <img 
+            src={restaurantExample}
+            className="w-full h-64 object-contain"
+            alt="Restaurant Example"
+          />
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+            <h3 className="text-xl font-bold">Inventory Management</h3>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
-</div>
 </section>
 
       {/* Footer */}
