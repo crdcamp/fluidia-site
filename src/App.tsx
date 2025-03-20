@@ -162,7 +162,7 @@ function App() {
         </div>
       </section>
 
-<div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-5'>
+<div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-7'>
   <div className='max-w-6x1 mx-auto px-4'>
     <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
     <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
