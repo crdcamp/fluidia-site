@@ -7,7 +7,6 @@ import restaurantExample from './assets/restaurant_example_image.jpg';
 import carExampleImage from './assets/exotic-car-rental-example.jpg';
 import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
-
 import { APP } from './constants.tsx';
 import { useScrollToElement } from './hooks/useScrollToElement';
 
@@ -202,33 +201,33 @@ function App() {
     {/* Example 2 with image */}
     <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
       <img 
-        src={restaurantExample}
+        src={carExampleImage}
         className="w-full h-64 object-contain"
       />
       <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Inventory Management</h3>
+        <h3 className="text-xl font-bold">Exotic Car Rental</h3>
       </div>
     </div>
     
     {/* Example 3 with image */}
     <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
       <img 
-        src={restaurantExample}
+        src={financeExampleImage}
         className="w-full h-64 object-contain"
       />
       <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Inventory Management</h3>
+        <h3 className="text-xl font-bold">Financial Services</h3>
       </div>
     </div>
     
     {/* Example 4 with image */}
     <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
       <img 
-        src={restaurantExample}
+        src={inventoryExampleImage}
         className="w-full h-64 object-contain"
       />
       <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Inventory Management</h3>    
+        <h3 className="text-xl font-bold">Shipping Inventory Management</h3>    
       </div>
     </div>
   </div>
