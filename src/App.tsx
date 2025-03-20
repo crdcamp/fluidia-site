@@ -1,8 +1,8 @@
 import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
-import heroBackgroundImage from './assets/green_galaxy_image.webp';
-import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
-import examplesBackgroundImage from './assets/dark_green_ocean.jpg';
+import backgroundImage1 from './assets/green_galaxy_image.webp';
+import backgroundImage2 from './assets/dark_green_landscape.jpg';
+import backgroundImage3 from './assets/dark_green_ocean.jpg';
 import restaurantExample from './assets/restaurant_example_image.jpg';
 import carExampleImage from './assets/exotic-car-rental-example.jpg';
 import financeExampleImage from './assets/finance-site-example.jpg';
@@ -31,7 +31,7 @@ function App() {
     <div className="bg-black text-gray-100">
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundImage: `url(${backgroundImage1})`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -92,7 +92,7 @@ function App() {
 
       <section className="py-24 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${aboutUsBackgroundImage})`,
+          backgroundImage: `url(${backgroundImage2})`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -174,7 +174,7 @@ function App() {
   ref={examplesRef}
   className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
   style={{
-    backgroundImage: `url(${examplesBackgroundImage})`,
+    backgroundImage: `url(${backgroundImage3})`,
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
