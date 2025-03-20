@@ -29,7 +29,6 @@ function App() {
 
   return (
     <div className="bg-black text-gray-100">
-      {/* Hero Section */}
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
@@ -64,7 +63,6 @@ function App() {
         </div>
       </section>
 
-      {/* About Us Section */}
       <section 
         ref={aboutUsRef}
         className="py-16" 
@@ -92,7 +90,6 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Us Section */}
       <section className="py-24 relative overflow-hidden"
         style={{
           backgroundImage: `url(${aboutUsBackgroundImage})`,
@@ -128,7 +125,6 @@ function App() {
                 className="p-8 rounded-xl" 
                 style={{ backgroundColor: 'var(--dark-card-bg)' }}
               >
-              {/* Contact Us Box */}
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <form className="space-y-4">
                 <div>
@@ -166,7 +162,6 @@ function App() {
         </div>
       </section>
 
-{/* Examples Section */}
 <div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-5'>
   <div className='max-w-6x1 mx-auto px-4'>
     <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
@@ -187,7 +182,6 @@ function App() {
   <div className="absolute inset-0 bg-gray-900/40"></div>
   <div className="relative z-10 max-w-7xl mx-auto px-4">
     <div className="grid md:grid-cols-2 gap-8">
-      {/* Example 1 with image */}
       <a 
         href="https://exampleinventorysite.netlify.app/"
         target="_blank"  
@@ -195,18 +189,19 @@ function App() {
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <img 
-            src={restaurantExample}
-            className="w-full h-64 object-contain"
-            alt="Restaurant Example"
-          />
+          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+            <img 
+              src={restaurantExample}
+              className="max-w-full max-h-full object-cover"
+              alt="Restaurant Example"
+            />
+          </div>
           <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Inventory Management</h3>
           </div>
         </div>
       </a>
 
-      {/* Example 2 with image */}
       <a 
         href="https://examplefinancesite.netlify.app/"
         target="_blank"  
@@ -214,18 +209,19 @@ function App() {
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <img 
-            src={financeExampleImage}
-            className="w-full h-64 object-contain"
-            alt="Restaurant Example"
-          />
+          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+            <img 
+              src={financeExampleImage}
+              className="max-w-full max-h-full object-cover"
+              alt="Finance Example"
+            />
+          </div>
           <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Inventory Management</h3>
+            <h3 className="text-xl font-bold">Finance Dashboard</h3>
           </div>
         </div>
       </a>
 
-      {/* Example 3 with image */}
       <a 
         href="https://examplecarsite.netlify.app/"
         target="_blank"  
@@ -233,18 +229,19 @@ function App() {
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <img 
-            src={carExampleImage}
-            className="w-full h-64 object-contain"
-            alt="Restaurant Example"
-          />
+          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+            <img 
+              src={carExampleImage}
+              className="max-w-full max-h-full object-cover"
+              alt="Car Rental Example"
+            />
+          </div>
           <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Inventory Management</h3>
+            <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
           </div>
         </div>
       </a>
 
-      {/* Example 4 with image */}
       <a 
         href="https://exampleinventorysite.netlify.app/"
         target="_blank"  
@@ -252,11 +249,13 @@ function App() {
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <img 
-            src={inventoryExampleImage}
-            className="w-full h-64 object-contain"
-            alt="Restaurant Example"
-          />
+          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+            <img 
+              src={inventoryExampleImage}
+              className="max-w-full max-h-full object-cover"
+              alt="Inventory Example"
+            />
+          </div>
           <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Inventory Management</h3>
           </div>
@@ -266,7 +265,6 @@ function App() {
   </div>
 </section>
 
-      {/* Footer */}
       <footer className="py-9" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
