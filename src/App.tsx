@@ -227,7 +227,7 @@ function App() {
         className="w-full h-64 object-contain"
       />
       <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <h3 className="text-xl font-bold">Shipping Inventory Management</h3>    
+        <h3 className="text-xl font-bold">Inventory Management</h3>    
       </div>
     </div>
   </div>
