@@ -4,6 +4,10 @@ import heroBackgroundImage from './assets/green_galaxy_image.webp';
 import aboutUsBackgroundImage from './assets/dark_green_landscape.jpg';
 import examplesBackgroundImage from './assets/dark_green_ocean.jpg';
 import restaurantExample from './assets/restaurant_example_image.jpg';
+import carExampleImage from './assets/exotic-car-rental-example.jpg';
+import financeExampleImage from './assets/finance-site-example.jpg';
+import inventoryExampleImage from './assets/inventory-site-example.jpg'
+
 import { APP } from './constants.tsx';
 import { useScrollToElement } from './hooks/useScrollToElement';
 
