@@ -196,7 +196,7 @@ function App() {
               alt="Restaurant Example"
             />
           </div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Inventory Management</h3>
           </div>
         </div>
@@ -216,7 +216,7 @@ function App() {
               alt="Finance Example"
             />
           </div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Finance Dashboard</h3>
           </div>
         </div>
@@ -236,7 +236,7 @@ function App() {
               alt="Car Rental Example"
             />
           </div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
           </div>
         </div>
@@ -256,7 +256,7 @@ function App() {
               alt="Inventory Example"
             />
           </div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
             <h3 className="text-xl font-bold">Inventory Management</h3>
           </div>
         </div>
