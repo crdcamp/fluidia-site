@@ -208,14 +208,14 @@ function App() {
 
       {/* Example 2 with image */}
       <a 
-        href="https://exampleinventorysite.netlify.app/"
+        href="https://examplefinancesite.netlify.app/"
         target="_blank"  
         rel="noopener noreferrer"  
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
           <img 
-            src={restaurantExample}
+            src={financeExampleImage}
             className="w-full h-64 object-contain"
             alt="Restaurant Example"
           />
@@ -227,14 +227,14 @@ function App() {
 
       {/* Example 3 with image */}
       <a 
-        href="https://exampleinventorysite.netlify.app/"
+        href="https://examplecarsite.netlify.app/"
         target="_blank"  
         rel="noopener noreferrer"  
         className="block"
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
           <img 
-            src={restaurantExample}
+            src={carExampleImage}
             className="w-full h-64 object-contain"
             alt="Restaurant Example"
           />
@@ -253,7 +253,7 @@ function App() {
       >
         <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
           <img 
-            src={restaurantExample}
+            src={inventoryExampleImage}
             className="w-full h-64 object-contain"
             alt="Restaurant Example"
           />
