@@ -67,10 +67,10 @@ function App() {
       {/* About Us Section */}
       <section 
         ref={aboutUsRef}
-        className="py-24" 
+        className="py-16" 
         style={{ backgroundColor: 'var(--dark-bg-color)' }}
       >
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-3">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
