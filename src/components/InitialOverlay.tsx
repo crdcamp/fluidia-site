@@ -8,7 +8,7 @@ const InitialOverlay = () => {
     // After component mounts, set a timer to hide the overlay
     const timer = setTimeout(() => {
       setShowOverlay(false);
-    }, 2000); // 2 seconds delay before fading starts
+    }, 500); // 2 seconds delay before fading starts
 
     return () => clearTimeout(timer);
   }, []);
