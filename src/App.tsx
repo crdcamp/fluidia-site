@@ -155,14 +155,15 @@ function App() {
               </motion.div>
             </AnimatedElement>
             
-            <div 
+            <AnimatedElement 
               ref={contactFormRef}
+              variants={animations.fadeUp}
               className="p-8 rounded-xl" 
               style={{ backgroundColor: 'var(--dark-card-bg)' }}
             >
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <ContactForm />
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </section>
