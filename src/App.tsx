@@ -166,11 +166,11 @@ function App() {
         </div>
       </section>
 
-      <AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-9'>
+      <AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
+          <h2 className="text-4xl font-bold text-center m-0">Beauty In Design</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
-            Beauty in design is our signature. Take a look.
+            Explore our collection of templates to see our craft in action
           </p>
         </div>
       </AnimatedElement>
