@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
 import backgroundImage3 from './assets/dark_green_ocean.jpg';
@@ -10,8 +11,7 @@ import carExampleImage from './assets/exotic-car-rental-example.jpg';
 import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
-import { useScrollToElement } from './hooks/useScrollToElement';
-import { AnimatedElement, fadeUp, fadeIn, staggerContainer, staggerItem, scaleIn } from './hooks/useScrollAnimation';
+import { fadeUp, fadeIn, staggerContainer, staggerItem, scaleIn } from './hooks/useScrollAnimation';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -26,9 +26,18 @@ interface FeatureProps {
 }
 
 function App() {
-  const { elementRef: contactFormRef, scrollToElement: scrollToContact } = useScrollToElement();
-  const { elementRef: aboutUsRef, scrollToElement: scrollToAbout } = useScrollToElement();
-  const { elementRef: examplesRef, scrollToElement: scrollToExamples } = useScrollToElement();
+  // Direct refs rather than using the hook
+  const contactFormRef = useRef<HTMLDivElement>(null);
+  const aboutUsRef = useRef<HTMLDivElement>(null);
+  const examplesRef = useRef<HTMLDivElement>(null);
+
+  // Simple scroll function
+  const scrollToElement = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
 
   return (
     <div className="bg-black text-gray-100">
@@ -49,19 +58,17 @@ function App() {
           </p>
           <div className="flex justify-center gap-6">
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={scrollToAbout}>
+              onClick={() => scrollToElement(aboutUsRef)}>
               About Us
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={scrollToContact}>
+              onClick={() => scrollToElement(contactFormRef)}>
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={scrollToExamples}>
+              onClick={() => scrollToElement(examplesRef)}>
               Examples
             </button>
-          </div>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           </div>
         </div>
       </section>
@@ -145,132 +152,136 @@ function App() {
                 </motion.div>
               </motion.div>
             </AnimatedElement>
-            <AnimatedElement variants={scaleIn} className="p-8 rounded-xl" 
-                ref={contactFormRef}  
-                style={{ backgroundColor: 'var(--dark-card-bg)' }}
-              >
+            
+            {/* Contact form - moved outside of AnimatedElement */}
+            <div 
+              ref={contactFormRef}
+              className="p-8 rounded-xl" 
+              style={{ backgroundColor: 'var(--dark-card-bg)' }}
+            >
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <ContactForm />
-            </AnimatedElement>
+            </div>
           </div>
         </div>
       </section>
 
-<AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-9'>
-  <div className='max-w-6x1 mx-auto px-4'>
-    <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
-    <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
-      Beauty in design is our signature. Take a look.
-    </p>
-  </div>
-</AnimatedElement>
-<section 
-  ref={examplesRef}
-  className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
-  style={{
-    backgroundImage: `url(${backgroundImage3})`,
-    backgroundAttachment: 'fixed',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}>
-  <div className="absolute inset-0 bg-gray-900/40"></div>
-  <div className="relative z-10 max-w-7xl mx-auto px-4">
-    <motion.div 
-      variants={staggerContainer}
-      initial="hidden"
-      animate="visible"
-      className="grid md:grid-cols-2 gap-8"
-    >
-      <motion.div variants={staggerItem}>
-        <a 
-          href="https://exampleinventorysite.netlify.app/"
-          target="_blank"  
-          rel="noopener noreferrer"  
-          className="block"
-        >
-          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-              <img 
-                src={restaurantExample}
-                className="max-w-full max-h-full object-cover"
-                alt="Restaurant Example"
-              />
-            </div>
-            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-              <h3 className="text-xl font-bold">Inventory Management</h3>
-            </div>
-          </div>
-        </a>
-      </motion.div>
+      <AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-9'>
+        <div className='max-w-6x1 mx-auto px-4'>
+          <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
+          <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
+            Beauty in design is our signature. Take a look.
+          </p>
+        </div>
+      </AnimatedElement>
+      
+      <section 
+        ref={examplesRef}
+        className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${backgroundImage3})`,
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}>
+        <div className="absolute inset-0 bg-gray-900/40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="grid md:grid-cols-2 gap-8"
+          >
+            <motion.div variants={staggerItem}>
+              <a 
+                href="https://exampleinventorysite.netlify.app/"
+                target="_blank"  
+                rel="noopener noreferrer"  
+                className="block"
+              >
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                    <img 
+                      src={restaurantExample}
+                      className="max-w-full max-h-full object-cover"
+                      alt="Restaurant Example"
+                    />
+                  </div>
+                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-xl font-bold">Inventory Management</h3>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
 
-      <motion.div variants={staggerItem}>
-        <a 
-          href="https://examplefinancesite.netlify.app/"
-          target="_blank"  
-          rel="noopener noreferrer"  
-          className="block"
-        >
-          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-              <img 
-                src={financeExampleImage}
-                className="max-w-full max-h-full object-cover"
-                alt="Finance Example"
-              />
-            </div>
-            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-              <h3 className="text-xl font-bold">Finance Dashboard</h3>
-            </div>
-          </div>
-        </a>
-      </motion.div>
+            <motion.div variants={staggerItem}>
+              <a 
+                href="https://examplefinancesite.netlify.app/"
+                target="_blank"  
+                rel="noopener noreferrer"  
+                className="block"
+              >
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                    <img 
+                      src={financeExampleImage}
+                      className="max-w-full max-h-full object-cover"
+                      alt="Finance Example"
+                    />
+                  </div>
+                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-xl font-bold">Finance Dashboard</h3>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
 
-      <motion.div variants={staggerItem}>
-        <a 
-          href="https://examplecarsite.netlify.app/"
-          target="_blank"  
-          rel="noopener noreferrer"  
-          className="block"
-        >
-          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-              <img 
-                src={carExampleImage}
-                className="max-w-full max-h-full object-cover"
-                alt="Car Rental Example"
-              />
-            </div>
-            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-              <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
-            </div>
-          </div>
-        </a>
-      </motion.div>
+            <motion.div variants={staggerItem}>
+              <a 
+                href="https://examplecarsite.netlify.app/"
+                target="_blank"  
+                rel="noopener noreferrer"  
+                className="block"
+              >
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                    <img 
+                      src={carExampleImage}
+                      className="max-w-full max-h-full object-cover"
+                      alt="Car Rental Example"
+                    />
+                  </div>
+                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
 
-      <motion.div variants={staggerItem}>
-        <a 
-          href="https://exampleinventorysite.netlify.app/"
-          target="_blank"  
-          rel="noopener noreferrer"  
-          className="block"
-        >
-          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-              <img 
-                src={inventoryExampleImage}
-                className="max-w-full max-h-full object-cover"
-                alt="Inventory Example"
-              />
-            </div>
-            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-              <h3 className="text-xl font-bold">Inventory Management</h3>
-            </div>
-          </div>
-        </a>
-      </motion.div>
-    </motion.div>
-  </div>
-</section>
+            <motion.div variants={staggerItem}>
+              <a 
+                href="https://exampleinventorysite.netlify.app/"
+                target="_blank"  
+                rel="noopener noreferrer"  
+                className="block"
+              >
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                    <img 
+                      src={inventoryExampleImage}
+                      className="max-w-full max-h-full object-cover"
+                      alt="Inventory Example"
+                    />
+                  </div>
+                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-xl font-bold">Inventory Management</h3>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
       <footer className="py-9" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
         <AnimatedElement variants={fadeIn} className="max-w-6xl mx-auto px-4 text-center">
@@ -366,6 +377,40 @@ function ContactForm() {
       </button>
       <ValidationError errors={state.errors} />
     </form>
+  );
+}
+
+// Helper AnimatedElement component - including it directly in this file
+function AnimatedElement({ children, variants, className }: { 
+  children: React.ReactNode, 
+  variants?: any,
+  className?: string
+}) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ 
+    threshold: 0.1,
+    triggerOnce: true 
+  });
+  
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants || {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
