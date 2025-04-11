@@ -59,7 +59,7 @@ function App() {
       <section className="min-h-[90vh] md:min-h-screen relative flex items-center justify-center overflow-hidden py-12 md:py-0"
         style={{
           backgroundImage: isMobile ? 'none' : `url(${backgroundImage1})`,
-          backgroundColor: isMobile ? '#333333' : 'transparent',
+          backgroundColor: isMobile ? '#615f5f' : 'transparent',
           backgroundAttachment: 'scroll',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
