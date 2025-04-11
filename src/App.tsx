@@ -11,8 +11,6 @@ import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
 import { useScrollToElement } from './hooks/useScrollToElement';
 
-// Need to fix contact form UI styling after submission
-
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
