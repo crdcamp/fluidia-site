@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
