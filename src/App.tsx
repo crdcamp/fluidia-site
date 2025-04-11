@@ -1,4 +1,6 @@
 import React, { useRef } from 'react';
+import InitialOverlay from './components/InitialOverlay';
+import { fadeUp, fadeIn, staggerContainer, staggerItem } from './hooks/useScrollAnimation';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import { motion, useAnimation } from 'framer-motion';
@@ -11,8 +13,6 @@ import carExampleImage from './assets/exotic-car-rental-example.jpg';
 import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
-import { fadeUp, fadeIn, staggerContainer, staggerItem } from './hooks/useScrollAnimation';
-import InitialOverlay from './components/InitialOverlay'; // Import the new overlay component
 
 interface ServiceCardProps {
   icon: React.ReactNode;
