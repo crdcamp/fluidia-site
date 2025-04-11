@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
@@ -273,16 +273,6 @@ function Feature({ icon, title, description }: FeatureProps) {
 function ContactForm() {
   // Replace with your actual Formspree form ID
   const [state, handleSubmit] = useForm("mblgqwyz");
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormValues(prev => ({ ...prev, [name]: value }));
-  };
 
   if (state.succeeded) {
     return (
@@ -300,8 +290,6 @@ function ContactForm() {
           id="name"
           type="text"
           name="name"
-          value={formValues.name}
-          onChange={handleChange}
           placeholder="Your Full Name"
           className="w-full p-3 rounded border border-gray-700 text-white"
           style={{ backgroundColor: 'var(--light-grey-box)' }}
@@ -314,8 +302,6 @@ function ContactForm() {
           id="email"
           type="email"
           name="email"
-          value={formValues.email}
-          onChange={handleChange}
           placeholder="Your Email"
           className="w-full p-3 rounded border border-gray-700 text-white"
           style={{ backgroundColor: 'var(--light-grey-box)' }}
@@ -327,8 +313,6 @@ function ContactForm() {
         <textarea
           id="message"
           name="message"
-          value={formValues.message}
-          onChange={handleChange}
           placeholder="Your Message"
           className="w-full p-3 rounded border border-gray-700 text-white"
           style={{ backgroundColor: 'var(--light-grey-box)' }}
