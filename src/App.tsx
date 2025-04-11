@@ -272,7 +272,7 @@ function Feature({ icon, title, description }: FeatureProps) {
 
 function ContactForm() {
   // Replace with your actual Formspree form ID
-  const [state, handleSubmit] = useForm("https://formspree.io/f/mblgqwyz");
+  const [state, handleSubmit] = useForm("mblgqwyz");
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
