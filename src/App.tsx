@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import InitialOverlay from './components/InitialOverlay';
 import { animations, AnimatedElement } from './hooks/useScrollAnimation';
 import { scrollToRef } from './hooks/useScrollToElement';
@@ -31,37 +31,57 @@ function App() {
   const contactFormRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const examplesRef = useRef<HTMLDivElement>(null);
+  
+  // State to track if device is mobile
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check for mobile device on component mount
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Run on first load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div className="bg-black text-gray-100">
       {/* Add the overlay component */}
       <InitialOverlay />
       
-      <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
+      <section className="min-h-[90vh] md:min-h-screen relative flex items-center justify-center overflow-hidden py-12 md:py-0"
         style={{
-          backgroundImage: `url(${backgroundImage1})`,
-          backgroundAttachment: 'fixed',
+          backgroundImage: isMobile ? 'none' : `url(${backgroundImage1})`,
+          backgroundColor: isMobile ? '#333333' : 'transparent',
+          backgroundAttachment: 'scroll',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
         <div className="absolute inset-0 bg-gray-900/70"></div>
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-6xl font-bold mb-6 text-white">
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             {APP.NAME}
           </h1>
-          <p className="text-2xl mb-8 text-gray-300">
+          <p className="text-xl md:text-2xl mb-8 text-gray-300">
           {APP.TAGLINE}
           </p>
-          <div className="flex justify-center gap-6">
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
               onClick={() => scrollToRef(aboutUsRef)}>
               About Us
             </button>
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
               onClick={() => scrollToRef(contactFormRef)}>
               Contact
             </button>
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
+            <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
               onClick={() => scrollToRef(examplesRef)}>
               Examples
             </button>
@@ -77,12 +97,12 @@ function App() {
       >
         {/* Section content... */}
         <AnimatedElement variants={animations.fadeUp} className="max-w-6xl mx-auto px-3">
-          <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">What We Offer</h2>
           <motion.div 
             variants={animations.staggerContainer}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-3 gap-8"
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
           >
             <motion.div variants={animations.staggerItem}>
               <ServiceCard
@@ -115,16 +135,17 @@ function App() {
       
       <section className="py-24 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${backgroundImage2})`,
-          backgroundAttachment: 'fixed',
+          backgroundImage: isMobile ? 'none' : `url(${backgroundImage2})`,
+          backgroundColor: isMobile ? '#333333' : 'transparent',
+          backgroundAttachment: 'scroll',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
         <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center px-4 md:px-0">
             <AnimatedElement variants={animations.fadeUp}>
-              <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s Focus</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">{APP.NAME}'s Focus</h2>
               <motion.div 
                 variants={animations.staggerContainer}
                 initial="hidden"
@@ -158,10 +179,10 @@ function App() {
             <AnimatedElement 
               ref={contactFormRef}
               variants={animations.fadeUp}
-              className="p-8 rounded-xl" 
+              className="p-6 md:p-8 rounded-xl w-full" 
               style={{ backgroundColor: 'var(--dark-card-bg)' }}
             >
-              <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Contact Us</h3>
               <ContactForm />
             </AnimatedElement>
           </div>
@@ -170,8 +191,8 @@ function App() {
 
       <AnimatedElement variants={animations.fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-4xl font-bold text-center m-0">Beauty In Design</h2>
-          <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
+          <h2 className="text-3xl md:text-4xl font-bold text-center m-0">Beauty In Design</h2>
+          <p className="text-xl md:text-2xl text-center mt-4 md:mt-6 mb-2 text-gray-300">
             Explore our collection of templates to see our craft in action
           </p>
         </div>
@@ -179,20 +200,21 @@ function App() {
       
       <section 
         ref={examplesRef}
-        className="min-h-screen pb-16 pt-12 relative flex items-center justify-center overflow-hidden"
+        className="min-h-[90vh] md:min-h-screen pb-16 pt-12 relative flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url(${backgroundImage3})`,
-          backgroundAttachment: 'fixed',
+          backgroundImage: isMobile ? 'none' : `url(${backgroundImage3})`,
+          backgroundColor: isMobile ? '#333333' : 'transparent',
+          backgroundAttachment: 'scroll',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
         <div className="absolute inset-0 bg-gray-900/40"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div 
             variants={animations.staggerContainer}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-2 gap-12"
+            className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
           >
             <motion.div variants={animations.staggerItem}>
               <a 
@@ -202,7 +224,7 @@ function App() {
                 className="block"
               >
                 <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-96 bg-gray-800">
+                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
                     <img 
                       src={restaurantExample}
                       className="w-full h-full object-cover"
@@ -210,7 +232,7 @@ function App() {
                     />
                   </div>
                   <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-2xl font-bold">Inventory Management</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">Inventory Management</h3>
                     <p className="text-gray-300 mt-2">A sleek interface for managing restaurant inventory and orders</p>
                   </div>
                 </div>
@@ -225,7 +247,7 @@ function App() {
                 className="block"
               >
                 <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-96 bg-gray-800">
+                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
                     <img 
                       src={financeExampleImage}
                       className="w-full h-full object-cover"
@@ -233,7 +255,7 @@ function App() {
                     />
                   </div>
                   <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-2xl font-bold">Finance Dashboard</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">Finance Dashboard</h3>
                     <p className="text-gray-300 mt-2">Interactive dashboard for tracking investments and financial data</p>
                   </div>
                 </div>
@@ -248,7 +270,7 @@ function App() {
                 className="block"
               >
                 <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-96 bg-gray-800">
+                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
                     <img 
                       src={carExampleImage}
                       className="w-full h-full object-cover"
@@ -256,7 +278,7 @@ function App() {
                     />
                   </div>
                   <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-2xl font-bold">Exotic Car Rentals</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">Exotic Car Rentals</h3>
                     <p className="text-gray-300 mt-2">Premium car rental service with elegant user experience</p>
                   </div>
                 </div>
@@ -271,7 +293,7 @@ function App() {
                 className="block"
               >
                 <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-96 bg-gray-800">
+                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
                     <img 
                       src={inventoryExampleImage}
                       className="w-full h-full object-cover"
@@ -279,7 +301,7 @@ function App() {
                     />
                   </div>
                   <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-2xl font-bold">Inventory Management</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">Inventory Management</h3>
                     <p className="text-gray-300 mt-2">Comprehensive inventory tracking system for business optimization</p>
                   </div>
                 </div>
@@ -329,7 +351,7 @@ function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <div className="p-6 bg-olive-700/20 rounded-lg text-center">
+      <div className="p-4 md:p-6 bg-olive-700/20 rounded-lg text-center">
         <h4 className="text-xl font-bold mb-2">Thank You!</h4>
         <p className="text-gray-300">Your message has been sent successfully.</p>
       </div>
@@ -337,7 +359,7 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
       <div>
         <input
           id="name"
