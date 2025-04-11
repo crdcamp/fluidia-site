@@ -11,7 +11,7 @@ import carExampleImage from './assets/exotic-car-rental-example.jpg';
 import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
-import { fadeUp, fadeIn, staggerContainer, staggerItem, scaleIn } from './hooks/useScrollAnimation';
+import { fadeUp, fadeIn, staggerContainer, staggerItem } from './hooks/useScrollAnimation';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -177,7 +177,7 @@ function App() {
       
       <section 
         ref={examplesRef}
-        className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
+        className="min-h-screen pb-16 pt-12 relative flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundImage3})`,
           backgroundAttachment: 'fixed',
@@ -185,12 +185,12 @@ function App() {
           backgroundPosition: 'center',
         }}>
         <div className="absolute inset-0 bg-gray-900/40"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div 
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 gap-12"
           >
             <motion.div variants={staggerItem}>
               <a 
@@ -199,16 +199,17 @@ function App() {
                 rel="noopener noreferrer"  
                 className="block"
               >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
+                  <div className="w-full h-96 bg-gray-800">
                     <img 
                       src={restaurantExample}
-                      className="max-w-full max-h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Restaurant Example"
                     />
                   </div>
-                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl font-bold">Inventory Management</h3>
+                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-2xl font-bold">Inventory Management</h3>
+                    <p className="text-gray-300 mt-2">A sleek interface for managing restaurant inventory and orders</p>
                   </div>
                 </div>
               </a>
@@ -221,16 +222,17 @@ function App() {
                 rel="noopener noreferrer"  
                 className="block"
               >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
+                  <div className="w-full h-96 bg-gray-800">
                     <img 
                       src={financeExampleImage}
-                      className="max-w-full max-h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Finance Example"
                     />
                   </div>
-                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl font-bold">Finance Dashboard</h3>
+                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-2xl font-bold">Finance Dashboard</h3>
+                    <p className="text-gray-300 mt-2">Interactive dashboard for tracking investments and financial data</p>
                   </div>
                 </div>
               </a>
@@ -243,16 +245,17 @@ function App() {
                 rel="noopener noreferrer"  
                 className="block"
               >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
+                  <div className="w-full h-96 bg-gray-800">
                     <img 
                       src={carExampleImage}
-                      className="max-w-full max-h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Car Rental Example"
                     />
                   </div>
-                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
+                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-2xl font-bold">Exotic Car Rentals</h3>
+                    <p className="text-gray-300 mt-2">Premium car rental service with elegant user experience</p>
                   </div>
                 </div>
               </a>
@@ -265,16 +268,17 @@ function App() {
                 rel="noopener noreferrer"  
                 className="block"
               >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-                  <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
+                  <div className="w-full h-96 bg-gray-800">
                     <img 
                       src={inventoryExampleImage}
-                      className="max-w-full max-h-full object-cover"
+                      className="w-full h-full object-cover"
                       alt="Inventory Example"
                     />
                   </div>
-                  <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl font-bold">Inventory Management</h3>
+                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+                    <h3 className="text-2xl font-bold">Inventory Management</h3>
+                    <p className="text-gray-300 mt-2">Comprehensive inventory tracking system for business optimization</p>
                   </div>
                 </div>
               </a>
@@ -381,10 +385,11 @@ function ContactForm() {
 }
 
 // Helper AnimatedElement component - including it directly in this file
-function AnimatedElement({ children, variants, className }: { 
+function AnimatedElement({ children, variants, className, style }: { 
   children: React.ReactNode, 
   variants?: any,
-  className?: string
+  className?: string,
+  style?: React.CSSProperties
 }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ 
@@ -408,6 +413,7 @@ function AnimatedElement({ children, variants, className }: {
         visible: { opacity: 1, y: 0 }
       }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
