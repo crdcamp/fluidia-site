@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
 import backgroundImage3 from './assets/dark_green_ocean.jpg';
@@ -126,37 +127,7 @@ function App() {
                 style={{ backgroundColor: 'var(--dark-card-bg)' }}
               >
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
-              <form className="space-y-4">
-                <div>
-                  <input 
-                    type="text" 
-                    placeholder="Your Full Name" 
-                    className="w-full p-3 rounded border border-gray-700 text-white"
-                    style={{ backgroundColor: 'var(--light-grey-box)' }}
-                  />
-                </div>
-                <div>
-                  <input 
-                    type="email" 
-                    placeholder='Your Email'
-                    className="w-full p-3 rounded border border-gray-700 text-white"
-                    style={{ backgroundColor: 'var(--light-grey-box)' }}
-                  />
-                </div>
-                <div>
-                  <textarea 
-                    placeholder="Your Message" 
-                    className="w-full p-3 rounded border border-gray-700 text-white"
-                    style={{ backgroundColor: 'var(--light-grey-box)' }}
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit" 
-                  className="w-full bg-olive-700 hover:bg-olive-600 text-white p-3 rounded transition"
-                >
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -296,6 +267,85 @@ function Feature({ icon, title, description }: FeatureProps) {
         <p className="text-gray-400">{description}</p>
       </div>
     </div>
+  );
+}
+
+function ContactForm() {
+  // Replace with your actual Formspree form ID
+  const [state, handleSubmit] = useForm("xrgjevog");
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormValues(prev => ({ ...prev, [name]: value }));
+  };
+
+  if (state.succeeded) {
+    return (
+      <div className="p-6 bg-olive-700/20 rounded-lg text-center">
+        <h4 className="text-xl font-bold mb-2">Thank You!</h4>
+        <p className="text-gray-300">Your message has been sent successfully.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          value={formValues.name}
+          onChange={handleChange}
+          placeholder="Your Full Name"
+          className="w-full p-3 rounded border border-gray-700 text-white"
+          style={{ backgroundColor: 'var(--light-grey-box)' }}
+          required
+        />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
+      </div>
+      <div>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          value={formValues.email}
+          onChange={handleChange}
+          placeholder="Your Email"
+          className="w-full p-3 rounded border border-gray-700 text-white"
+          style={{ backgroundColor: 'var(--light-grey-box)' }}
+          required
+        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+      </div>
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          value={formValues.message}
+          onChange={handleChange}
+          placeholder="Your Message"
+          className="w-full p-3 rounded border border-gray-700 text-white"
+          style={{ backgroundColor: 'var(--light-grey-box)' }}
+          rows={4}
+          required
+        ></textarea>
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
+      </div>
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="w-full bg-olive-700 hover:bg-olive-600 disabled:bg-gray-700 text-white p-3 rounded transition"
+      >
+        {state.submitting ? "Sending..." : "Send Message"}
+      </button>
+      <ValidationError errors={state.errors} />
+    </form>
   );
 }
 
