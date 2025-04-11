@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import InitialOverlay from './components/InitialOverlay';
-import { fadeUp, fadeIn, staggerContainer, staggerItem } from './hooks/useScrollAnimation';
+import { animations, AnimatedElement } from './hooks/useScrollAnimation';
+import { scrollToRef } from './hooks/useScrollToElement';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
 import backgroundImage3 from './assets/dark_green_ocean.jpg';
@@ -27,18 +27,10 @@ interface FeatureProps {
 }
 
 function App() {
-  // Direct refs rather than using the hook
+  // Section refs for navigation
   const contactFormRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const examplesRef = useRef<HTMLDivElement>(null);
-
-  // Simple scroll function
-  const scrollToElement = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
-  };
 
   return (
     <div className="bg-black text-gray-100">
@@ -62,15 +54,15 @@ function App() {
           </p>
           <div className="flex justify-center gap-6">
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={() => scrollToElement(aboutUsRef)}>
+              onClick={() => scrollToRef(aboutUsRef)}>
               About Us
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={() => scrollToElement(contactFormRef)}>
+              onClick={() => scrollToRef(contactFormRef)}>
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-8 py-3 rounded-lg transition"
-              onClick={() => scrollToElement(examplesRef)}>
+              onClick={() => scrollToRef(examplesRef)}>
               Examples
             </button>
           </div>
@@ -84,29 +76,29 @@ function App() {
         style={{ backgroundColor: 'var(--dark-bg-color)' }}
       >
         {/* Section content... */}
-        <AnimatedElement variants={fadeUp} className="max-w-6xl mx-auto px-3">
+        <AnimatedElement variants={animations.fadeUp} className="max-w-6xl mx-auto px-3">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
           <motion.div 
-            variants={staggerContainer}
+            variants={animations.staggerContainer}
             initial="hidden"
             animate="visible"
             className="grid md:grid-cols-3 gap-8"
           >
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<Globe2 className="w-12 h-12 text-olive-500" />}
                 title="Web Development"
                 description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them quickly."
               />
             </motion.div>
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<Code2 className="w-12 h-12 text-olive-500" />}
                 title="Fully Integrated Solutions"
                 description='Our motto is Integration. Everything we do for our customers ensures a cohesive and fully implemented approach.'
               />
             </motion.div>
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<LineChart className="w-12 h-12 text-olive-500" />}
                 title="Business Analysis"
@@ -131,29 +123,29 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <AnimatedElement variants={fadeUp}>
+            <AnimatedElement variants={animations.fadeUp}>
               <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s Focus</h2>
               <motion.div 
-                variants={staggerContainer}
+                variants={animations.staggerContainer}
                 initial="hidden"
                 animate="visible"
                 className="space-y-6"
               >
-                <motion.div variants={staggerItem}>
+                <motion.div variants={animations.staggerItem}>
                   <Feature
                     icon={<Rocket className="w-6 h-6 text-olive-500" />}
                     title="Work Smarter"
                     description="We use the latest technologies to speed things up, making an experience mutually beneficial to both developers and customers."
                   />
                 </motion.div>
-                <motion.div variants={staggerItem}>
+                <motion.div variants={animations.staggerItem}>
                   <Feature
                     icon={<Database className="w-6 h-6 text-olive-500" />}
                     title="Integrate"
                     description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to maintain."
                   />
                 </motion.div>
-                <motion.div variants={staggerItem}>
+                <motion.div variants={animations.staggerItem}>
                   <Feature
                     icon={<Laptop className="w-6 h-6 text-olive-500" />}
                     title="Solve"
@@ -175,7 +167,7 @@ function App() {
         </div>
       </section>
 
-      <AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
+      <AnimatedElement variants={animations.fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
         <div className='max-w-6x1 mx-auto px-4'>
           <h2 className="text-4xl font-bold text-center m-0">Beauty In Design</h2>
           <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
@@ -196,12 +188,12 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div 
-            variants={staggerContainer}
+            variants={animations.staggerContainer}
             initial="hidden"
             animate="visible"
             className="grid md:grid-cols-2 gap-12"
           >
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <a 
                 href="https://exampleinventorysite.netlify.app/"
                 target="_blank"  
@@ -224,7 +216,7 @@ function App() {
               </a>
             </motion.div>
 
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <a 
                 href="https://examplefinancesite.netlify.app/"
                 target="_blank"  
@@ -247,7 +239,7 @@ function App() {
               </a>
             </motion.div>
 
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <a 
                 href="https://examplecarsite.netlify.app/"
                 target="_blank"  
@@ -270,7 +262,7 @@ function App() {
               </a>
             </motion.div>
 
-            <motion.div variants={staggerItem}>
+            <motion.div variants={animations.staggerItem}>
               <a 
                 href="https://exampleinventorysite.netlify.app/"
                 target="_blank"  
@@ -297,7 +289,7 @@ function App() {
       </section>
 
       <footer className="py-9" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <AnimatedElement variants={fadeIn} className="max-w-6xl mx-auto px-4 text-center">
+        <AnimatedElement variants={animations.fadeIn} className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
           <div className="flex justify-center space-x-6">
@@ -394,39 +386,5 @@ function ContactForm() {
 }
 
 // Helper AnimatedElement component - including it directly in this file
-function AnimatedElement({ children, variants, className, style }: { 
-  children: React.ReactNode, 
-  variants?: any,
-  className?: string,
-  style?: React.CSSProperties
-}) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ 
-    threshold: 0.1,
-    triggerOnce: true 
-  });
-  
-  React.useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-  
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={variants || {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0 }
-      }}
-      className={className}
-      style={style}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 export default App;
