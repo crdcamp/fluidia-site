@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code2, LineChart, Globe2, Rocket, Database, Laptop } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import { motion } from 'framer-motion';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
 import backgroundImage3 from './assets/dark_green_ocean.jpg';
@@ -10,6 +11,7 @@ import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
 import { useScrollToElement } from './hooks/useScrollToElement';
+import { AnimatedElement, fadeUp, fadeIn, staggerContainer, staggerItem, scaleIn } from './hooks/useScrollAnimation';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -69,26 +71,37 @@ function App() {
         className="py-16" 
         style={{ backgroundColor: 'var(--dark-bg-color)' }}
       >
-        <div className="max-w-6xl mx-auto px-3">
+        <AnimatedElement variants={fadeUp} className="max-w-6xl mx-auto px-3">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <ServiceCard
-              icon={<Globe2 className="w-12 h-12 text-olive-500" />}
-              title="Web Development"
-              description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them quickly."
-            />
-            <ServiceCard
-              icon={<Code2 className="w-12 h-12 text-olive-500" />}
-              title="Fully Integrated Solutions"
-              description='Our motto is Integration. Everything we do for our customers ensures a cohesive and fully implemented approach.'
-            />
-            <ServiceCard
-              icon={<LineChart className="w-12 h-12 text-olive-500" />}
-              title="Business Analysis"
-              description="As a final step of your optimization journey, we also offer a thorough analysis of your business and its practices."
-            />
-          </div>
-        </div>
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="grid md:grid-cols-3 gap-8"
+          >
+            <motion.div variants={staggerItem}>
+              <ServiceCard
+                icon={<Globe2 className="w-12 h-12 text-olive-500" />}
+                title="Web Development"
+                description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them quickly."
+              />
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <ServiceCard
+                icon={<Code2 className="w-12 h-12 text-olive-500" />}
+                title="Fully Integrated Solutions"
+                description='Our motto is Integration. Everything we do for our customers ensures a cohesive and fully implemented approach.'
+              />
+            </motion.div>
+            <motion.div variants={staggerItem}>
+              <ServiceCard
+                icon={<LineChart className="w-12 h-12 text-olive-500" />}
+                title="Business Analysis"
+                description="As a final step of your optimization journey, we also offer a thorough analysis of your business and its practices."
+              />
+            </motion.div>
+          </motion.div>
+        </AnimatedElement>
       </section>
 
       <section className="py-24 relative overflow-hidden"
@@ -101,46 +114,56 @@ function App() {
         <div className="absolute inset-0 bg-gray-900/40"></div>
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <AnimatedElement variants={fadeUp}>
               <h2 className="text-4xl font-bold mb-8">{APP.NAME}'s Focus</h2>
-              <div className="space-y-6">
-                <Feature
-                  icon={<Rocket className="w-6 h-6 text-olive-500" />}
-                  title="Work Smarter"
-                  description="We use the latest technologies to speed things up, making an experience mutually beneficial to both developers and customers."
-                />
-                <Feature
-                  icon={<Database className="w-6 h-6 text-olive-500" />}
-                  title="Integrate"
-                  description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to maintain."
-                />
-                <Feature
-                  icon={<Laptop className="w-6 h-6 text-olive-500" />}
-                  title="Solve"
-                  description="We want to work directly with you in order to develop the perfect solution."
-                />
-              </div>
-            </div>
-            <div 
-                ref={contactFormRef} 
-                className="p-8 rounded-xl" 
+              <motion.div 
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="space-y-6"
+              >
+                <motion.div variants={staggerItem}>
+                  <Feature
+                    icon={<Rocket className="w-6 h-6 text-olive-500" />}
+                    title="Work Smarter"
+                    description="We use the latest technologies to speed things up, making an experience mutually beneficial to both developers and customers."
+                  />
+                </motion.div>
+                <motion.div variants={staggerItem}>
+                  <Feature
+                    icon={<Database className="w-6 h-6 text-olive-500" />}
+                    title="Integrate"
+                    description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to maintain."
+                  />
+                </motion.div>
+                <motion.div variants={staggerItem}>
+                  <Feature
+                    icon={<Laptop className="w-6 h-6 text-olive-500" />}
+                    title="Solve"
+                    description="We want to work directly with you in order to develop the perfect solution."
+                  />
+                </motion.div>
+              </motion.div>
+            </AnimatedElement>
+            <AnimatedElement variants={scaleIn} className="p-8 rounded-xl" 
+                ref={contactFormRef}  
                 style={{ backgroundColor: 'var(--dark-card-bg)' }}
               >
               <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <ContactForm />
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </section>
 
-<div style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-9'>
+<AnimatedElement variants={fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-9'>
   <div className='max-w-6x1 mx-auto px-4'>
     <h2 className="text-4xl font-bold text-center m-0">Our Craft In Action</h2>
     <p className="text-2xl text-center mt-6 mb-2 text-gray-300">
       Beauty in design is our signature. Take a look.
     </p>
   </div>
-</div>
+</AnimatedElement>
 <section 
   ref={examplesRef}
   className="min-h-screen pb-10 pt-9 relative flex items-center justify-center overflow-hidden"
@@ -152,97 +175,110 @@ function App() {
   }}>
   <div className="absolute inset-0 bg-gray-900/40"></div>
   <div className="relative z-10 max-w-7xl mx-auto px-4">
-    <div className="grid md:grid-cols-2 gap-8">
-      <a 
-        href="https://exampleinventorysite.netlify.app/"
-        target="_blank"  
-        rel="noopener noreferrer"  
-        className="block"
-      >
-        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-            <img 
-              src={restaurantExample}
-              className="max-w-full max-h-full object-cover"
-              alt="Restaurant Example"
-            />
+    <motion.div 
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
+      className="grid md:grid-cols-2 gap-8"
+    >
+      <motion.div variants={staggerItem}>
+        <a 
+          href="https://exampleinventorysite.netlify.app/"
+          target="_blank"  
+          rel="noopener noreferrer"  
+          className="block"
+        >
+          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+              <img 
+                src={restaurantExample}
+                className="max-w-full max-h-full object-cover"
+                alt="Restaurant Example"
+              />
+            </div>
+            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+              <h3 className="text-xl font-bold">Inventory Management</h3>
+            </div>
           </div>
-          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Inventory Management</h3>
-          </div>
-        </div>
-      </a>
+        </a>
+      </motion.div>
 
-      <a 
-        href="https://examplefinancesite.netlify.app/"
-        target="_blank"  
-        rel="noopener noreferrer"  
-        className="block"
-      >
-        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-            <img 
-              src={financeExampleImage}
-              className="max-w-full max-h-full object-cover"
-              alt="Finance Example"
-            />
+      <motion.div variants={staggerItem}>
+        <a 
+          href="https://examplefinancesite.netlify.app/"
+          target="_blank"  
+          rel="noopener noreferrer"  
+          className="block"
+        >
+          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+              <img 
+                src={financeExampleImage}
+                className="max-w-full max-h-full object-cover"
+                alt="Finance Example"
+              />
+            </div>
+            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+              <h3 className="text-xl font-bold">Finance Dashboard</h3>
+            </div>
           </div>
-          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Finance Dashboard</h3>
-          </div>
-        </div>
-      </a>
+        </a>
+      </motion.div>
 
-      <a 
-        href="https://examplecarsite.netlify.app/"
-        target="_blank"  
-        rel="noopener noreferrer"  
-        className="block"
-      >
-        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-            <img 
-              src={carExampleImage}
-              className="max-w-full max-h-full object-cover"
-              alt="Car Rental Example"
-            />
+      <motion.div variants={staggerItem}>
+        <a 
+          href="https://examplecarsite.netlify.app/"
+          target="_blank"  
+          rel="noopener noreferrer"  
+          className="block"
+        >
+          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+              <img 
+                src={carExampleImage}
+                className="max-w-full max-h-full object-cover"
+                alt="Car Rental Example"
+              />
+            </div>
+            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+              <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
+            </div>
           </div>
-          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Exotic Car Rentals</h3>
-          </div>
-        </div>
-      </a>
+        </a>
+      </motion.div>
 
-      <a 
-        href="https://exampleinventorysite.netlify.app/"
-        target="_blank"  
-        rel="noopener noreferrer"  
-        className="block"
-      >
-        <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
-          <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-            <img 
-              src={inventoryExampleImage}
-              className="max-w-full max-h-full object-cover"
-              alt="Inventory Example"
-            />
+      <motion.div variants={staggerItem}>
+        <a 
+          href="https://exampleinventorysite.netlify.app/"
+          target="_blank"  
+          rel="noopener noreferrer"  
+          className="block"
+        >
+          <div className="rounded-xl overflow-hidden transition transform hover:scale-105">
+            <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+              <img 
+                src={inventoryExampleImage}
+                className="max-w-full max-h-full object-cover"
+                alt="Inventory Example"
+              />
+            </div>
+            <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
+              <h3 className="text-xl font-bold">Inventory Management</h3>
+            </div>
           </div>
-          <div className="p-3 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-            <h3 className="text-xl font-bold">Inventory Management</h3>
-          </div>
-        </div>
-      </a>
-    </div>
+        </a>
+      </motion.div>
+    </motion.div>
   </div>
 </section>
 
       <footer className="py-9" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-        <div className="max-w-6xl mx-auto px-4 text-center">
+        <AnimatedElement variants={fadeIn} className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">{APP.NAME}</h2>
           <p className="text-gray-400 mb-6">{APP.TAGLINE}</p>
           <div className="flex justify-center space-x-6">
           </div>
-        </div>
+        </AnimatedElement>
       </footer>
     </div>
   );
