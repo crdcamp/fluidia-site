@@ -12,6 +12,7 @@ import financeExampleImage from './assets/finance-site-example.jpg';
 import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
 import { fadeUp, fadeIn, staggerContainer, staggerItem } from './hooks/useScrollAnimation';
+import InitialOverlay from './components/InitialOverlay'; // Import the new overlay component
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -41,6 +42,9 @@ function App() {
 
   return (
     <div className="bg-black text-gray-100">
+      {/* Add the overlay component */}
+      <InitialOverlay />
+      
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundImage1})`,
@@ -73,11 +77,13 @@ function App() {
         </div>
       </section>
 
+      {/* Rest of your components remain unchanged */}
       <section 
         ref={aboutUsRef}
         className="py-16" 
         style={{ backgroundColor: 'var(--dark-bg-color)' }}
       >
+        {/* Section content... */}
         <AnimatedElement variants={fadeUp} className="max-w-6xl mx-auto px-3">
           <h2 className="text-4xl font-bold text-center mb-16">What We Offer</h2>
           <motion.div 
@@ -111,6 +117,10 @@ function App() {
         </AnimatedElement>
       </section>
 
+      {/* ... Rest of your sections ... */}
+      
+      {/* Rest of the component code remains the same */}
+      
       <section className="py-24 relative overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundImage2})`,
@@ -153,7 +163,6 @@ function App() {
               </motion.div>
             </AnimatedElement>
             
-            {/* Contact form - moved outside of AnimatedElement */}
             <div 
               ref={contactFormRef}
               className="p-8 rounded-xl" 
