@@ -8,10 +8,6 @@ import { motion } from 'framer-motion';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
 import backgroundImage3 from './assets/dark_green_ocean.jpg';
-import restaurantExample from './assets/restaurant_example_image.jpg';
-import carExampleImage from './assets/exotic-car-rental-example.jpg';
-import financeExampleImage from './assets/finance-site-example.jpg';
-import inventoryExampleImage from './assets/inventory-site-example.jpg'
 import { APP } from './constants.tsx';
 
 interface ServiceCardProps {
@@ -30,7 +26,7 @@ function App() {
   // Section refs for navigation
   const contactFormRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
-  const examplesRef = useRef<HTMLDivElement>(null);
+  const paymentRef = useRef<HTMLDivElement>(null);
   
   // State to track if device is mobile
   const [isMobile, setIsMobile] = useState(false);
@@ -82,20 +78,18 @@ function App() {
               Contact
             </button>
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
-              onClick={() => scrollToRef(examplesRef)}>
-              Examples
+              onClick={() => scrollToRef(paymentRef)}>
+              Payment
             </button>
           </div>
         </div>
       </section>
-
-      {/* Rest of your components remain unchanged */}
       <section 
         ref={aboutUsRef}
         className="py-16" 
         style={{ backgroundColor: 'var(--dark-bg-color)' }}
       >
-        {/* Section content... */}
+        {/*What We Offer Section*/}
         <AnimatedElement variants={animations.fadeUp} className="max-w-6xl mx-auto px-3">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">What We Offer</h2>
           <motion.div 
@@ -128,10 +122,6 @@ function App() {
           </motion.div>
         </AnimatedElement>
       </section>
-
-      {/* ... Rest of your sections ... */}
-      
-      {/* Rest of the component code remains the same */}
       
       <section className="py-24 relative overflow-hidden"
         style={{
@@ -175,7 +165,7 @@ function App() {
                 </motion.div>
               </motion.div>
             </AnimatedElement>
-            
+            {/* Contact Us Box*/}
             <AnimatedElement 
               ref={contactFormRef}
               variants={animations.fadeUp}
@@ -191,15 +181,16 @@ function App() {
 
       <AnimatedElement variants={animations.fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
         <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-3xl md:text-4xl font-bold text-center m-0">Beauty In Design</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center m-0">Payment</h2>
           <p className="text-xl md:text-2xl text-center mt-4 md:mt-6 mb-2 text-gray-300">
-            Explore our collection of templates to see our craft in action
+            Complete the form below to activate the automation solutions we've discussed.
           </p>
         </div>
       </AnimatedElement>
-      
+      {}
+      {/*Payment Section*/}
       <section 
-        ref={examplesRef}
+        ref={paymentRef}
         className="min-h-[90vh] md:min-h-screen pb-16 pt-12 relative flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: isMobile ? 'none' : `url(${backgroundImage3})`,
@@ -208,106 +199,12 @@ function App() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
+        
         <div className="absolute inset-0 bg-gray-900/40"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div 
-            variants={animations.staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
-          >
-            <motion.div variants={animations.staggerItem}>
-              <a 
-                href="https://exampleinventorysite.netlify.app/"
-                target="_blank"  
-                rel="noopener noreferrer"  
-                className="block"
-              >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
-                    <img 
-                      src={restaurantExample}
-                      className="w-full h-full object-cover"
-                      alt="Restaurant Example"
-                    />
-                  </div>
-                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl md:text-2xl font-bold">Inventory Management</h3>
-                    <p className="text-gray-300 mt-2">A sleek interface for managing restaurant inventory and orders</p>
-                  </div>
-                </div>
-              </a>
-            </motion.div>
-
-            <motion.div variants={animations.staggerItem}>
-              <a 
-                href="https://examplefinancesite.netlify.app/"
-                target="_blank"  
-                rel="noopener noreferrer"  
-                className="block"
-              >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
-                    <img 
-                      src={financeExampleImage}
-                      className="w-full h-full object-cover"
-                      alt="Finance Example"
-                    />
-                  </div>
-                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl md:text-2xl font-bold">Finance Dashboard</h3>
-                    <p className="text-gray-300 mt-2">Interactive dashboard for tracking investments and financial data</p>
-                  </div>
-                </div>
-              </a>
-            </motion.div>
-
-            <motion.div variants={animations.staggerItem}>
-              <a 
-                href="https://examplecarsite.netlify.app/"
-                target="_blank"  
-                rel="noopener noreferrer"  
-                className="block"
-              >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
-                    <img 
-                      src={carExampleImage}
-                      className="w-full h-full object-cover"
-                      alt="Car Rental Example"
-                    />
-                  </div>
-                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl md:text-2xl font-bold">Exotic Car Rentals</h3>
-                    <p className="text-gray-300 mt-2">Premium car rental service with elegant user experience</p>
-                  </div>
-                </div>
-              </a>
-            </motion.div>
-
-            <motion.div variants={animations.staggerItem}>
-              <a 
-                href="https://exampleinventorysite.netlify.app/"
-                target="_blank"  
-                rel="noopener noreferrer"  
-                className="block"
-              >
-                <div className="rounded-xl overflow-hidden transition transform hover:scale-105 shadow-lg shadow-black/30 h-full">
-                  <div className="w-full h-64 sm:h-80 md:h-96 bg-gray-800">
-                    <img 
-                      src={inventoryExampleImage}
-                      className="w-full h-full object-cover"
-                      alt="Inventory Example"
-                    />
-                  </div>
-                  <div className="p-6 rounded-b-xl" style={{ backgroundColor: 'var(--dark-bg-color)' }}>
-                    <h3 className="text-xl md:text-2xl font-bold">Inventory Management</h3>
-                    <p className="text-gray-300 mt-2">Comprehensive inventory tracking system for business optimization</p>
-                  </div>
-                </div>
-              </a>
-            </motion.div>
-          </motion.div>
+        
+        {/* Your payment content will go here with relative z-10 positioning */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          {/* Payment form content */}
         </div>
       </section>
 
@@ -346,7 +243,6 @@ function Feature({ icon, title, description }: FeatureProps) {
 }
 
 function ContactForm() {
-  // Replace with your actual Formspree form ID
   const [state, handleSubmit] = useForm("mblgqwyz");
 
   if (state.succeeded) {
