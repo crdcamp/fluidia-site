@@ -101,22 +101,22 @@ function App() {
             <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<Globe2 className="w-12 h-12 text-olive-500" />}
-                title="Web Development"
-                description="Fully custom websites with fast turn around times. Whatever preferences you have, we'll make sure to deliver them quickly."
+                title="Time and Autonomy"
+                description="Automation solutions that handle repetitive tasks, freeing your team to focus on strategic work that drives growth."
               />
             </motion.div>
             <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<Code2 className="w-12 h-12 text-olive-500" />}
-                title="Fully Integrated Solutions"
-                description='Our motto is Integration. Everything we do for our customers ensures a cohesive and fully implemented approach.'
+                title="Streamlined Solutions"
+                description='Our motto is Integration. Everything we do for our customers ensures a streamlined approach to keep things simple.'
               />
             </motion.div>
             <motion.div variants={animations.staggerItem}>
               <ServiceCard
                 icon={<LineChart className="w-12 h-12 text-olive-500" />}
-                title="Business Analysis"
-                description="As a final step of your optimization journey, we also offer a thorough analysis of your business and its practices."
+                title="Workflow Integrations"
+                description="Connect your business systems with intelligent automation that ensures smooth data flow and eliminates bottlenecks."
               />
             </motion.div>
           </motion.div>
