@@ -116,7 +116,7 @@ function App() {
               <ServiceCard
                 icon={<LineChart className="w-12 h-12 text-olive-500" />}
                 title="Workflow Integrations"
-                description="Connect your business systems with intelligent automation that ensures smooth data flow and eliminates bottlenecks."
+                description="Connect your business with intelligent automation to ensure smooth data flow, eliminate bottlenecks, and make your business efficient."
               />
             </motion.div>
           </motion.div>
@@ -153,14 +153,14 @@ function App() {
                   <Feature
                     icon={<Database className="w-6 h-6 text-olive-500" />}
                     title="Integrate"
-                    description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to maintain."
+                    description="Our pride is in both design and integration. Fluidia structures its solutions so they're easy to work with."
                   />
                 </motion.div>
                 <motion.div variants={animations.staggerItem}>
                   <Feature
                     icon={<Laptop className="w-6 h-6 text-olive-500" />}
                     title="Solve"
-                    description="We want to work directly with you in order to develop the perfect solution."
+                    description="We want to work directly with you in order to develop the perfect automation solution."
                   />
                 </motion.div>
               </motion.div>
