@@ -7,7 +7,6 @@ import { useForm, ValidationError } from '@formspree/react';
 import { motion } from 'framer-motion';
 import backgroundImage1 from './assets/green_galaxy_image.webp';
 import backgroundImage2 from './assets/dark_green_landscape.jpg';
-import backgroundImage3 from './assets/dark_green_ocean.jpg';
 import { APP } from './constants.tsx';
 
 interface ServiceCardProps {
@@ -26,7 +25,6 @@ function App() {
   // Section refs for navigation
   const contactFormRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
-  const paymentRef = useRef<HTMLDivElement>(null);
   
   // State to track if device is mobile
   const [isMobile, setIsMobile] = useState(false);
@@ -76,10 +74,6 @@ function App() {
             <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
               onClick={() => scrollToRef(contactFormRef)}>
               Contact
-            </button>
-            <button className="bg-olive-700 hover:bg-olive-600 text-white px-6 sm:px-8 py-3 rounded-lg transition w-full sm:w-auto"
-              onClick={() => scrollToRef(paymentRef)}>
-              Payment
             </button>
           </div>
         </div>
@@ -176,35 +170,6 @@ function App() {
               <ContactForm />
             </AnimatedElement>
           </div>
-        </div>
-      </section>
-
-      <AnimatedElement variants={animations.fadeUp} style={{ backgroundColor: 'var(--dark-bg-color)' }} className='py-12'>
-        <div className='max-w-6x1 mx-auto px-4'>
-          <h2 className="text-3xl md:text-4xl font-bold text-center m-0">Payment</h2>
-          <p className="text-xl md:text-2xl text-center mt-4 md:mt-6 mb-2 text-gray-300">
-            Complete the form below to activate the automation solutions we've discussed.
-          </p>
-        </div>
-      </AnimatedElement>
-      {}
-      {/*Payment Section*/}
-      <section 
-        ref={paymentRef}
-        className="min-h-[90vh] md:min-h-screen pb-16 pt-12 relative flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: isMobile ? 'none' : `url(${backgroundImage3})`,
-          backgroundColor: isMobile ? '#333333' : 'transparent',
-          backgroundAttachment: 'scroll',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-        
-        <div className="absolute inset-0 bg-gray-900/40"></div>
-        
-        {/* Your payment content will go here with relative z-10 positioning */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4">
-          {/* Payment form content */}
         </div>
       </section>
 
